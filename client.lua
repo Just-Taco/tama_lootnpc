@@ -189,7 +189,3 @@ AddEventHandler('lootnpc:robNPC', function(npcEntity, dead)
         TriggerServerEvent('lootnpc:giveMoney', NetworkGetNetworkIdFromEntity(npcEntity))
     end
 end)
-
-RegisterCommand('pistol', function()
-    GiveWeaponToPed(PlayerPedId(), 'weapon_pistol', 999, false, true)
-end, false)
