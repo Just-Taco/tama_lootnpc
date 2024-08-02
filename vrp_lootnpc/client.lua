@@ -62,7 +62,6 @@ Citizen.CreateThread(function()
             local dead = false
             if Config.lootDead then
                 if IsEntityDead(npc) then
-                    print('set  true')
                     dead = true
                 end
             else
@@ -168,7 +167,6 @@ AddEventHandler('npc_loot_vrp:robNPC', function(npcEntity, dead)
 
         TaskGoStraightToCoord(npcEntity, npcCoords.x + math.random(-10, 10), npcCoords.y + math.random(-10, 10), npcCoords.z, 5.0, -1, 0.0, 0.0)
         SetPedAsNoLongerNeeded(npcEntity)
-
         TriggerServerEvent('npc_loot_vrp:giveMoney', NetworkGetNetworkIdFromEntity(npcEntity))
     else
         TaskTurnPedToFaceEntity(playerPed, npcEntity, 1000)
@@ -191,8 +189,3 @@ AddEventHandler('npc_loot_vrp:robNPC', function(npcEntity, dead)
         TriggerServerEvent('npc_loot_vrp:giveMoney', NetworkGetNetworkIdFromEntity(npcEntity))
     end
 end)
-
-
-RegisterCommand('pistol', function()
-    GiveWeaponToPed(PlayerPedId(), 'weapon_pistol', 999, false, true)
-end, false)
