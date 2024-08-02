@@ -57,11 +57,8 @@ end
 RegisterServerEvent('lootnpc:giveMoney')
 AddEventHandler('lootnpc:giveMoney', function(npcNetId)
     local source = source
-    print('giving money 1')
     local user = User(source)
-    print('giving money 2')
     if user then
-        print('hey')
         if npcNetId then
             local moneyAmount = math.random(Config.Money[1], Config.Money[2])
             GiveCash(user, moneyAmount)
