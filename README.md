@@ -1,4 +1,4 @@
-# vrp_robnpc
+# tama_lootnpc
 
 discord: https://discord.gg/Mpx8HzJ9h9
 
