@@ -54,12 +54,12 @@ else
     error('Framework not set correct!')
 end
 
-RegisterServerEvent('lootnpc:giveMoney')
+RegisterNetEvent('lootnpc:giveMoney')
 AddEventHandler('lootnpc:giveMoney', function(npcNetId)
     local source = source
     local user = User(source)
     if user then
-        if npcNetId then
+        if NetworkDoesEntityExistWithNetworkId(npcNetId) then
             local moneyAmount = math.random(Config.Money[1], Config.Money[2])
             GiveCash(user, moneyAmount)
             local text = Config.NotifyText['Robbed']:gsub("0amount0", moneyAmount)
